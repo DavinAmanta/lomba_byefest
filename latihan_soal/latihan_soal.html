@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latihan Soal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="latihan_soal.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <a href="../landing_page/landing_page.html" style="text-decoration: none;">
+        <div class="logo">FIVY</div>
+      </a>
+      <nav class="menu">
+        <ul>
+          <li><a href="../landing_page/landing_page.html">Home</a></li>
+          <li><a href="../buku/buku.html">Daftar Bacaan</a></li>
+          <li><a href="../latihan_soal/latihan_soal.html">Latihan Soal</a></li>
+          <li><a href="../tryout/tryout.html">Try Out</a></li>
+        </ul>
+      </nav>
+      <div class="profile-dropdown" id="profileDropdown">
+        <div class="profile-capsule" onclick="toggleDropdown()">
+          <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=150&h=150&q=80"
+            alt="Profile" class="profile-pic" />
+          <span class="profile-name">Halo, Davin</span>
+          <span class="dropdown-icon">▼</span>
+        </div>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="../profile/profile.html" style="display: flex; align-items: center; gap: 8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 20.25a8.25 8.25 0 0115 0" />
+            </svg>
+            Profile
+          </a>
+          <a class="dropdown-item" href="../forum_diskusi/forum_diskusi.html">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" d="M5 6h14M5 12h10M5 18h7" />
+            </svg>
+            Forum Diskusi
+          </a>
+          <a class="dropdown-item" href="../login/login.html">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" d="M15 3h4a2 2 0 0 1 2 2v4m-6 12h4a2 2 0 0 0 2-2v-4m-6 0L3 3m0 18L21 3" />
+            </svg>
+            Keluar
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="soal-wrapper">
+    <div class="soal-left">
+      <h1>Progress Belajar Kamu 📘</h1>
+      <p>
+        Pantau perkembanganmu dalam mengerjakan soal-soal interaktif. Raih target belajar dengan konsisten dan
+        menyenangkan!
+      </p>
+
+      <div class="progress-list">
+        <div class="progress-item">
+          <div class="progress-label">
+            <img src=" https://img.icons8.com/color/48/book-shelf.png" alt="Bahasa Indonesia" />
+            <span>Bahasa Indonesia</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 75%">7/8 Bab</div>
+          </div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-label">
+            <img src="https://img.icons8.com/color/48/calculator.png" alt="Matematika" />
+            <span>Matematika</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 50%">4/8 Bab</div>
+          </div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-label">
+            <img src="https://img.icons8.com/color/48/literature.png" alt="Bahasa Inggris" />
+            <span>Bahasa Inggris</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 60%">6/8 Bab</div>
+          </div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-label">
+            <img src="https://img.icons8.com/color/48/globe.png" alt="Geografi" />
+            <span>Geografi</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 30%">3/8 Bab</div>
+          </div>
+        </div>
+      </div>
+
+      <img class="progress-image" src="https://img.icons8.com/fluency/200/student-male--v1.png" alt="Siswa Belajar">
+    </div>
+
+
+
+    <div class="soal-right">
+      <label for="mapel">Pilih Mata Pelajaran:</label>
+      <select id="mapel" onchange="tampilkanBab()">
+        <option value="">-- Pilih --</option>
+        <option value="matematika">Matematika</option>
+        <option value="fisika">Fisika</option>
+        <option value="kimia">Kimia</option>
+        <option value="bindo">Bahasa Indonesia</option>
+        <option value="bing">Bahasa Inggris</option>
+        <option value="geo">Geografi</option>
+      </select>
+
+      <div class="bab-list" id="babContainer" style="display: none;">
+        <label>Daftar Bab:</label>
+        <ul id="babList"></ul>
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <p>Silakan pilih mata pelajaran untuk melihat daftar bab.</p>
+      </div>
+    </div>
+  </main>
+
+
+  <script>
+    const dataBab = {
+      matematika: [
+        'Aljabar', 'Geometri', 'Trigonometri', 'Statistika', 'Pertidaksamaan',
+        'Logaritma', 'Fungsi Kuadrat', 'Barisan & Deret', 'Peluang'
+      ],
+      fisika: [
+        'Gerak Lurus', 'Hukum Newton', 'Usaha dan Energi', 'Momentum dan Impuls',
+        'Getaran dan Gelombang', 'Listrik Dinamis', 'Medan Magnet'
+      ],
+      kimia: [
+        'Struktur Atom', 'Ikatan Kimia', 'Reaksi Redoks', 'Larutan Asam Basa',
+        'Stoikiometri', 'Termokimia', 'Kelarutan dan Hasil Kali Kelarutan'
+      ],
+      bindo: [
+        'Teks Berita', 'Teks Eksplanasi', 'Karya Ilmiah', 'Cerpen', 'Puisi',
+        'Teks Editorial', 'Drama', 'Teks Negosiasi'
+      ],
+      bing: [
+        'Grammar', 'Vocabulary', 'Reading Comprehension', 'Speaking',
+        'Listening', 'Writing', 'Tenses', 'Passive Voice'
+      ],
+      geo: [
+        'Litosfer', 'Atmosfer', 'Peta dan SIG', 'Biosfer', 'Hidrosfer',
+        'Interaksi Desa dan Kota', 'Sumber Daya Alam', 'Lingkungan Hidup'
+      ]
+    };
+
+    function tampilkanBab() {
+      const mapel = document.getElementById('mapel').value;
+      const babContainer = document.getElementById('babContainer');
+      const babList = document.getElementById('babList');
+      babList.innerHTML = '';
+
+      if (mapel && dataBab[mapel]) {
+        dataBab[mapel].forEach((bab, index) => {
+          const li = document.createElement('li');
+          li.textContent = bab;
+          li.style.cursor = 'pointer';
+          li.onclick = () => {
+            // Arahkan ke halaman soal berdasarkan mapel & bab (bisa disesuaikan struktur foldernya)
+            const link = `../soal/${mapel}/bab${index + 1}.html`;
+            window.location.href = link;
+          };
+          babList.appendChild(li);
+        });
+        babContainer.style.display = 'block';
+      } else {
+        babContainer.style.display = 'none';
+      }
+    }
+  </script>
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("profileDropdown");
+      dropdown.classList.toggle("open");
+    }
+
+    window.addEventListener('click', function (e) {
+      const dropdown = document.getElementById("profileDropdown");
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("open");
+      }
+    });
+  </script>
+</body>
+
+</html>

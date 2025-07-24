@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil</title>
+    <link rel="stylesheet" href="profile.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="../landing_page/landing_page.html" style="text-decoration: none;">
+                <div class="logo">FIVY</div>
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li><a href="../landing_page/landing_page.html">Home</a></li>
+                    <li><a href="../buku/buku.html">Daftar Bacaan</a></li>
+                    <li><a href="../latihan_soal/latihan_soal.html">Latihan Soal</a></li>
+                    <li><a href="../tryout/tryout.html">Try Out</a></li>
+                </ul>
+            </nav>
+            <div class="profile-dropdown" id="profileDropdown">
+                <div class="profile-capsule" onclick="toggleDropdown()">
+                    <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=150&h=150&q=80"
+                        alt="Profile" class="profile-pic" />
+                    <span class="profile-name">Halo, Davin</span>
+                    <span class="dropdown-icon">▼</span>
+                </div>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="../profile/profile.html"
+                        style="display: flex; align-items: center; gap: 8px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 20.25a8.25 8.25 0 0115 0" />
+                        </svg>
+                        Profile
+                    </a>
+                    <a class="dropdown-item" href="../forum_diskusi/forum_diskusi.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" d="M5 6h14M5 12h10M5 18h7" />
+                        </svg>
+                        Forum Diskusi
+                    </a>
+                    <a class="dropdown-item" href="../login/login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor"
+                                d="M15 3h4a2 2 0 0 1 2 2v4m-6 12h4a2 2 0 0 0 2-2v-4m-6 0L3 3m0 18L21 3" />
+                        </svg>
+                        Keluar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="profile-wrapper">
+        <section class="biodata-section">
+            <div class="biodata-header">
+                <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Foto Profil" class="biodata-img" />
+                <div>
+                    <h2>Davin Amanta</h2>
+                    <p class="biodata-role">Siswa XI RPL 2 - SMK Negeri 2 Karanganyar</p>
+                </div>
+            </div>
+            <div class="biodata-info">
+                <div><strong>NISN:</strong> 1234567890</div>
+                <div><strong>Nama Lengkap:</strong> Davin Amanta</div>
+                <div><strong>Tempat, Tanggal Lahir:</strong> Bandung, 12 Mei 2007</div>
+                <div><strong>Jenis Kelamin:</strong> Laki-laki</div>
+                <div><strong>Agama:</strong> Islam</div>
+                <div><strong>No. HP:</strong> 0812-3456-7890</div>
+                <div><strong>Email:</strong> davin@example.com</div>
+                <div><strong>Alamat:</strong> Jl. Pendidikan No. 45, Bandung</div>
+                <div><strong>Nama Wali:</strong> Bpk. Andi Amanta</div>
+                <div><strong>Status Akun:</strong> Aktif</div>
+            </div>
+            <div class="biodata-footer">
+                <button class="edit-btn">✏️ Edit Profil</button>
+                <p class="last-login">Login terakhir: 20 Juli 2025 - 21:04 WIB</p>
+            </div>
+        </section>
+
+        <section class="nilai-section">
+            <h2 class="section-title">📊 Nilai Rata - Rata Mata Pelajaran</h2>
+            <div class="nilai-grid">
+                <div class="nilai-card">
+                    <h3 style="font-size: 15px;">Bahasa Indonesia</h3>
+                    <p class="score">88</p>
+                    <p class="status lulus">Lulus</p>
+                </div>
+                <div class="nilai-card">
+                    <h3>Matematika</h3>
+                    <p class="score">75</p>
+                    <p class="status lulus">Lulus</p>
+                </div>
+                <div class="nilai-card">
+                    <h3>Bahasa Inggris</h3>
+                    <p class="score">92</p>
+                    <p class="status lulus">Lulus</p>
+                </div>
+                <div class="nilai-card">
+                    <h3>Informatika</h3>
+                    <p class="score">95</p>
+                    <p class="status lulus">Lulus</p>
+                </div>
+                <div class="nilai-card">
+                    <h3>Informatika</h3>
+                    <p class="score">95</p>
+                    <p class="status lulus">Lulus</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="progress-section">
+            <h2 class="section-title">📚 Progress Belajar</h2>
+            <div class="progress-grid">
+                <!-- Bahasa Indonesia -->
+                <div class="progress-card">
+                    <div class="progress-icon">
+                        <img src="https://img.icons8.com/color/48/book-shelf.png" alt="Bahasa Indonesia" />
+                    </div>
+                    <h4>Bahasa Indonesia</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%">8.5 / 10</div>
+                    </div>
+                </div>
+
+                <!-- Matematika -->
+                <div class="progress-card">
+                    <div class="progress-icon">
+                        <img src="https://img.icons8.com/color/48/calculator.png" alt="Matematika" />
+                    </div>
+                    <h4>Matematika</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%">7 / 10</div>
+                    </div>
+                </div>
+
+                <!-- Bahasa Inggris -->
+                <div class="progress-card">
+                    <div class="progress-icon">
+                        <img src="https://img.icons8.com/color/48/literature.png" alt="Bahasa Inggris" />
+                    </div>
+                    <h4>Bahasa Inggris</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%">9 / 10</div>
+                    </div>
+                </div>
+
+                <!-- Informatika -->
+                <div class="progress-card">
+                    <div class="progress-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/8956/8956082.png" alt="Informatika" />
+                    </div>
+                    <h4>Informatika</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%">9.5 / 10</div>
+                    </div>
+                </div>
+
+                <!-- PPKn -->
+                <div class="progress-card">
+                    <div class="progress-icon">
+                        <img src="https://img.icons8.com/color/48/law.png" alt="PPKn" />
+                    </div>
+                    <h4>IPS</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%">6 / 10</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("profileDropdown");
+            dropdown.classList.toggle("open");
+        }
+
+        window.addEventListener('click', function (e) {
+            const dropdown = document.getElementById("profileDropdown");
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove("open");
+            }
+        });
+
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

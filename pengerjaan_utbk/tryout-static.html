@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Try Out UTBK - PK & PM & PU</title>
+  <link rel="stylesheet" href="pengerjaan.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Soal</h2>
+      <div class="nomor-soal" id="nomorSoal"></div>
+      <div class="timer" id="timer">90:00</div>
+    </aside>
+
+    <main class="main-content">
+      <h1>Try Out UTBK</h1>
+      <p class="sub-title">Pengetahuan Kuantitatif & Penalaran Matematika & Pengetahuan Umum</p>
+      <form id="quizForm">
+        <div id="soal-container"></div>
+        <button type="submit">Kirim & Lihat Nilai</button>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    const soalList = [
+      {
+        nomor: 1,
+        soal: "Jika 5x - 3 = 2x + 6, maka nilai x adalah ...",
+        pilihan: ["1", "2", "3", "4"],
+        jawaban: "3"
+      },
+      {
+        nomor: 2,
+        soal: "Suatu persegi memiliki luas 81 cm². Panjang sisinya adalah ...",
+        pilihan: ["7", "8", "9", "10"],
+        jawaban: "9"
+      },
+      {
+        nomor: 3,
+        soal: "Hasil dari (4 + 3 × 2) adalah ...",
+        pilihan: ["10", "14", "16", "20"],
+        jawaban: "10"
+      },
+      {
+        nomor: 4,
+        soal: "Jika p = 3 dan q = 5, maka p² + q² = ...",
+        pilihan: ["34", "30", "27", "25"],
+        jawaban: "34"
+      },
+      {
+        nomor: 5,
+        soal: "Berapa persen dari 300 adalah 75?",
+        pilihan: ["15%", "20%", "25%", "30%"],
+        jawaban: "25%"
+      },
+      {
+        nomor: 6,
+        soal: "Jika f(x) = 2x + 1, maka f(3) adalah ...",
+        pilihan: ["5", "6", "7", "8"],
+        jawaban: "7"
+      },
+      {
+        nomor: 7,
+        soal: "Suku ke-4 dari barisan 2, 4, 6, ... adalah ...",
+        pilihan: ["6", "8", "10", "12"],
+        jawaban: "8"
+      },
+      {
+        nomor: 8,
+        soal: "Jika 2x = 10, maka x adalah ...",
+        pilihan: ["2", "4", "5", "6"],
+        jawaban: "5"
+      },
+      {
+        nomor: 9,
+        soal: "Hasil dari 20% dari 150 adalah ...",
+        pilihan: ["20", "25", "30", "35"],
+        jawaban: "30"
+      },
+      {
+        nomor: 10,
+        soal: "Jika y = 3x dan x = 2, maka y = ...",
+        pilihan: ["5", "6", "8", "10"],
+        jawaban: "6"
+      }
+    ];
+
+    const soalContainer = document.getElementById("soal-container");
+    const nomorSoal = document.getElementById("nomorSoal");
+
+    soalList.forEach((soal, index) => {
+      // Sidebar nomor soal
+      const btn = document.createElement("a");
+      btn.textContent = soal.nomor;
+      btn.href = `#soal${soal.nomor}`;
+      nomorSoal.appendChild(btn);
+
+      // Konten soal
+      const soalDiv = document.createElement("div");
+      soalDiv.classList.add("soal");
+      soalDiv.id = `soal${soal.nomor}`;
+      soalDiv.innerHTML = `
+        <p><strong>${soal.nomor}. ${soal.soal}</strong></p>
+        ${soal.pilihan.map((pil, i) => `
+          <label>
+            <input type="radio" name="q${soal.nomor}" value="${pil}"> ${String.fromCharCode(65 + i)}. ${pil}
+          </label>
+        `).join('')}
+      `;
+      soalContainer.appendChild(soalDiv);
+    });
+
+    // Timer 90 menit
+    let waktu = 90 * 60;
+    const timerEl = document.getElementById("timer");
+    const timer = setInterval(() => {
+      const menit = String(Math.floor(waktu / 60)).padStart(2, '0');
+      const detik = String(waktu % 60).padStart(2, '0');
+      timerEl.textContent = `${menit}:${detik}`;
+      if (waktu-- <= 0) {
+        clearInterval(timer);
+        alert("Waktu habis!");
+        document.getElementById("quizForm").submit();
+      }
+    }, 1000);
+
+    document.getElementById("quizForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      let benar = 0;
+      soalList.forEach((s, i) => {
+        const jawaban = document.querySelector(`input[name="q${s.nomor}"]:checked`);
+        if (jawaban && jawaban.value === s.jawaban) {
+          benar++;
+        }
+      });
+      const skorUTBK = Math.round((benar / soalList.length) * 1000);
+      localStorage.setItem("nilaiUTBK", skorUTBK);
+      window.location.href = "hasil.html";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasil UTBK</title>
+  <link rel="stylesheet" href="pengerjaan.css" />
+</head>
+<body>
+  <div class="container">
+    <main class="main-content">
+      <h1>Hasil Try Out UTBK</h1>
+      <div class="score-box">
+        <p>Nilai UTBK Anda:</p>
+        <h2 id="skor"></h2>
+        <a href="pembahasan.html" class="btn">Lihat Pembahasan</a>
+      </div>
+    </main>
+  </div>
+  <script>
+    const skor = localStorage.getItem("nilaiUTBK") || 0;
+    document.getElementById("skor").textContent = skor;
+  </script>
+</body>
+</html>

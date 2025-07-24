@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Kelas - Admin Bimbel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: rgba(44, 62, 80, 1);
+      --accent-color: #1abc9c;
+      --bg-color: #f5f7fa;
+      --card-bg: #ffffff;
+      --text-color: #2c3e50;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: var(--primary-color);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 20px;
+      position: fixed;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      margin: 8px 0;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+    }
+
+    .sidebar a.active {
+      background-color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    .main {
+      margin-left: 240px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background-color: #fafafa;
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    th,
+    td {
+      padding: 14px 18px;
+      text-align: left;
+    }
+
+    thead {
+      background-color: #ecf0f1;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9fbfc;
+    }
+
+    tbody tr:hover {
+      background-color: #f0f3f5;
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    .btn-add {
+      background-color: var(--accent-color);
+      border: none;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .btn-soal {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      font-size: 13px;
+      border-radius: 5px;
+      margin-right: 6px;
+    }
+
+    .btn-kelas {
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      font-size: 13px;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      table {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <h2>Admin Bimbel</h2>
+    <a href="../dashboard/dashboard.html">📊 Dashboard</a>
+    <a href="../student/student.html">👩‍🎓 Data Siswa</a>
+    <a href="../teacher/teacher.html">👨‍🏫 Data Guru</a>
+    <a href="../class/class.html" class="active">🏫 Data Kelas</a>
+    <a href="../book/book.html">📚 Buku</a>
+  </div>
+
+  <div class="main">
+    <div class="navbar">
+      <div class="navbar-left">Data Kelas</div>
+      <div class="profile">
+        <img src="https://i.pravatar.cc/150?img=12" alt="Profil Admin">
+      </div>
+    </div>
+
+    <div class="content">
+      <h1>Daftar Kelas Aktif</h1>
+      <button class="btn-add" data-bs-toggle="modal" data-bs-target="#modalTambahKelas">+ Tambah Kelas</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Kelas</th>
+            <th>Tingkat</th>
+            <th>Wali Kelas</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Kelas 10 IPA</td>
+            <td>10</td>
+            <td>Ahmad Fadli</td>
+            <td>
+              <button class="btn-soal" onclick="window.location.href='soal/soal.html'">+ Soal</button>
+              <button class="btn-kelas" data-bs-toggle="modal" data-bs-target="#modalEditKelas">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Kelas 11 IPS</td>
+            <td>11</td>
+            <td>Sri Wahyuni</td>
+            <td>
+              <button class="btn-soal">+ Soal</button>
+              <button class="btn-kelas" data-bs-toggle="modal" data-bs-target="#modalEditKelas">Edit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Kelas 12 SBMPTN</td>
+            <td>12</td>
+            <td>Budi Hartono</td>
+            <td>
+              <button class="btn-soal">+ Soal</button>
+              <button class="btn-kelas" data-bs-toggle="modal" data-bs-target="#modalEditKelas">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal Tambah Kelas -->
+  <div class="modal fade" id="modalTambahKelas" tabindex="-1" aria-labelledby="modalTambahKelasLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTambahKelasLabel">Tambah Kelas Baru</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="namaKelas" class="form-label">Nama Kelas</label>
+            <input type="text" class="form-control" id="namaKelas">
+          </div>
+          <div class="mb-3">
+            <label for="tingkatKelas" class="form-label">Tingkat</label>
+            <select class="form-select" id="tingkatKelas">
+              <option value="">Pilih Tingkat</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="waliKelas" class="form-label">Wali Kelas</label>
+            <input type="text" class="form-control" id="waliKelas">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Modal Edit Kelas -->
+  <div class="modal fade" id="modalEditKelas" tabindex="-1" aria-labelledby="modalEditKelasLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="modalEditKelasLabel">Edit Kelas</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="editNamaKelas" class="form-label">Nama Kelas</label>
+            <input type="text" class="form-control" id="editNamaKelas" value="Kelas 10 IPA">
+          </div>
+          <div class="mb-3">
+            <label for="editTingkatKelas" class="form-label">Tingkat</label>
+            <select class="form-select" id="editTingkatKelas">
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="editWaliKelas" class="form-label">Wali Kelas</label>
+            <input type="text" class="form-control" id="editWaliKelas" value="Ahmad Fadli">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

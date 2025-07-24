@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Soal - Geografi Bab 7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+      position: relative;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+    .question {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s ease;
+    }
+    .question h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      background: #f1f3f5;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .options input[type="radio"] {
+      margin-right: 10px;
+    }
+    .options label:hover {
+      background: #dfe7fd;
+    }
+    .submit-btn {
+      display: block;
+      margin: 40px auto 0;
+      padding: 15px 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #6c757d;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .back-btn:hover {
+      background-color: #5a6268;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../../latihan_soal/latihan_soal.html" class="back-btn">&larr; Kembali</a>
+    <h1>Latihan Soal Geografi Bab 7</h1>
+    <form id="quizForm">
+
+    <script>
+      const soal = [
+        {
+          q: "1. Ilmu yang mempelajari tentang permukaan bumi dan fenomena alam disebut ....",
+          o: [
+            "Geologi",
+            "Geografi",
+            "Astronomi",
+            "Ekologi"
+          ]
+        },
+        {
+          q: "2. Letak geografis Indonesia berada di antara dua benua dan dua samudra, yaitu ....",
+          o: [
+            "Asia - Afrika, Pasifik - Hindia",
+            "Asia - Australia, Pasifik - Atlantik",
+            "Asia - Australia, Hindia - Pasifik",
+            "Asia - Amerika, Hindia - Atlantik"
+          ]
+        },
+        {
+          q: "3. Garis khayal yang membagi bumi menjadi dua bagian utara dan selatan disebut ....",
+          o: [
+            "Garis bujur",
+            "Garis lintang",
+            "Garis ekuator",
+            "Garis kontur"
+          ]
+        },
+        {
+          q: "4. Peta yang menggambarkan relief permukaan bumi disebut ....",
+          o: [
+            "Peta tematik",
+            "Peta topografi",
+            "Peta wilayah",
+            "Peta iklim"
+          ]
+        },
+        {
+          q: "5. Letak suatu wilayah berdasarkan kenyataan di lapangan disebut ....",
+          o: [
+            "Letak absolut",
+            "Letak astronomis",
+            "Letak geografis",
+            "Letak relatif"
+          ]
+        },
+        {
+          q: "6. Gunung berapi yang masih aktif di Indonesia salah satunya adalah ....",
+          o: [
+            "Gunung Merapi",
+            "Gunung Jaya Wijaya",
+            "Gunung Kerinci",
+            "Gunung Rinjani"
+          ]
+        },
+        {
+          q: "7. Wilayah yang memiliki curah hujan tinggi biasanya dipengaruhi oleh ....",
+          o: [
+            "Kondisi tanah",
+            "Angin muson",
+            "Gunung api",
+            "Letak bujur"
+          ]
+        },
+        {
+          q: "8. Faktor utama yang mempengaruhi persebaran flora dan fauna adalah ....",
+          o: [
+            "Iklim",
+            "Ketinggian tempat",
+            "Jenis tanah",
+            "Letak geografis"
+          ]
+        },
+        {
+          q: "9. Wilayah Asia Tenggara termasuk dalam kawasan ....",
+          o: [
+            "Subtropis",
+            "Tropis",
+            "Arktik",
+            "Sedang"
+          ]
+        },
+        {
+          q: "10. Dampak negatif urbanisasi yang tidak terkendali adalah ....",
+          o: [
+            "Pembangunan kota",
+            "Penurunan angka kemiskinan",
+            "Kemacetan dan pemukiman kumuh",
+            "Pertumbuhan ekonomi meningkat"
+          ]
+        }
+      ];
+
+      const form = document.getElementById("quizForm");
+      let output = "";
+      soal.forEach((s, i) => {
+        output += `<div class="question">
+          <h3>${s.q}</h3>
+          <div class="options">
+            ${s.o.map((opt, j) => `<label><input type="radio" name="q${i + 1}" value="${String.fromCharCode(97 + j)}"> ${opt}</label>`).join('')}
+          </div>
+        </div>`;
+      });
+      form.insertAdjacentHTML("afterbegin", output);
+    </script>
+
+      <button type="submit" class="submit-btn">Submit Jawaban</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = '../hasil/hasil_jawaban.html';
+    });
+  </script>
+</body>
+</html>

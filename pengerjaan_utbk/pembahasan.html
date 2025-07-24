@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pembahasan Soal UTBK</title>
+  <link rel="stylesheet" href="pengerjaan.css" />
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar"> 
+      <h2>Pembahasan</h2>
+      <div class="nomor-soal" id="nomorPembahasan"></div>
+      <button onclick="window.location.href='../tryout/tryout.html'"
+        style="margin-bottom: 20px; padding: 10px 20px; background-color: #4f46e5; color: white; border: none; border-radius: 8px; cursor: pointer;">
+        ← Kembali
+      </button>
+    </aside>
+
+    <main class="main-content">
+      <h1>Pembahasan Soal UTBK</h1>
+      <p class="sub-title">Penjelasan lengkap soal 1 - 10</p>
+      <div id="pembahasan-container"></div>
+    </main>
+  </div>
+
+  <script>
+    const pembahasanList = [{
+        nomor: 1,
+        soal: "Jika 5x - 3 = 2x + 6, maka nilai x adalah ...",
+        jawaban: "3",
+        pembahasan: "Pindahkan semua x ke kiri: 5x - 2x = 6 + 3 → 3x = 9 → x = 3."
+      },
+      {
+        nomor: 2,
+        soal: "Suatu persegi memiliki luas 81 cm². Panjang sisinya adalah ...",
+        jawaban: "9",
+        pembahasan: "Sisi = √81 = 9 cm."
+      },
+      {
+        nomor: 3,
+        soal: "Hasil dari (4 + 3 × 2) adalah ...",
+        jawaban: "10",
+        pembahasan: "Perkalian dulu: 3 × 2 = 6 → 4 + 6 = 10."
+      },
+      {
+        nomor: 4,
+        soal: "Jika p = 3 dan q = 5, maka p² + q² = ...",
+        jawaban: "34",
+        pembahasan: "p² + q² = 3² + 5² = 9 + 25 = 34."
+      },
+      {
+        nomor: 5,
+        soal: "Berapa persen dari 300 adalah 75?",
+        jawaban: "25%",
+        pembahasan: "(75 / 300) × 100% = 25%."
+      },
+      {
+        nomor: 6,
+        soal: "Jika f(x) = 2x + 1, maka f(3) adalah ...",
+        jawaban: "7",
+        pembahasan: "f(3) = 2(3) + 1 = 6 + 1 = 7."
+      },
+      {
+        nomor: 7,
+        soal: "Suku ke-4 dari barisan 2, 4, 6, ... adalah ...",
+        jawaban: "8",
+        pembahasan: "Barisan bertambah 2, maka suku ke-4: 2, 4, 6, 8."
+      },
+      {
+        nomor: 8,
+        soal: "Jika 2x = 10, maka x adalah ...",
+        jawaban: "5",
+        pembahasan: "x = 10 / 2 = 5."
+      },
+      {
+        nomor: 9,
+        soal: "Hasil dari 20% dari 150 adalah ...",
+        jawaban: "30",
+        pembahasan: "20% × 150 = 0.2 × 150 = 30."
+      },
+      {
+        nomor: 10,
+        soal: "Jika y = 3x dan x = 2, maka y = ...",
+        jawaban: "6",
+        pembahasan: "y = 3 × 2 = 6."
+      }
+    ];
+
+    const pembahasanContainer = document.getElementById("pembahasan-container");
+    const nomorPembahasan = document.getElementById("nomorPembahasan");
+
+    pembahasanList.forEach(item => {
+      // Sidebar nav
+      const nav = document.createElement("a");
+      nav.href = `#p${item.nomor}`;
+      nav.textContent = item.nomor;
+      nomorPembahasan.appendChild(nav);
+
+      // Box pembahasan
+      const box = document.createElement("div");
+      box.classList.add("pembahasan-box");
+      box.id = `p${item.nomor}`;
+      box.innerHTML = `
+        <h2>Soal ${item.nomor}</h2>
+        <p><strong>Soal:</strong> ${item.soal}</p>
+        <p><strong>Jawaban:</strong> ${item.jawaban}</p>
+        <p><strong>Pembahasan:</strong> ${item.pembahasan}</p>
+      `;
+      pembahasanContainer.appendChild(box);
+    });
+  </script>
+</body>
+
+</html>

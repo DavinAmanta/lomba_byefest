@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar & Pembayaran Paket</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="forum_paket.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Daftar & Pilih Paket</h1>
+      <form action="#" method="post" class="form">
+        <div class="input-group">
+          <label for="fullname">Nama Lengkap</label>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="phone">Nomor HP</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Kata Sandi</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <p class="section-title">Pilih Paket:</p>
+        <div class="packages">
+          <div class="pill" onclick="selectPill(this)">Mingguan</div>
+          <div class="pill" onclick="selectPill(this)">Bulanan</div>
+          <div class="pill" onclick="selectPill(this)">Tahunan</div>
+        </div>
+
+        <div class="agreement">
+          <input type="checkbox" required>
+          <label>Saya menyetujui <a href="#">Syarat & Ketentuan</a></label>
+        </div>
+
+        <div class="buttons">
+          <a href="../pembayaran/pembayaran.html" class="submit">Lanjutkan Pembayaran</a>
+          <a href="../index/index.html" class="cancel">Kembali</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function selectPill(el) {
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+</body>
+</html>

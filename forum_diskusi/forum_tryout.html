@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Forum Diskusi Try Out</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="forum.css">
+</head>
+<body>
+
+  <!-- Sidebar Grup -->
+  <div class="sidebar">
+    <h2>Grup Diskusi</h2>
+    <div class="group active"><a href="forum_tryout.html">💬 Try Out</a></div>
+    <div class="group"><a href="forum_matematika.html">📘 Matematika</a></div>
+    <div class="group"><a href="forum_ptn.html">🎯 PTN</a></div>
+    <div class="group"><a href="forum_bahasa.html">📚 Bahasa Indo</a></div>
+
+    <div style="margin-top: auto; padding-top: 20px;">
+      <a href="../landing_page/landing_page.html" class="back-btn" style="
+        display: inline-block;
+        color: white;
+        background-color: #5568c6;
+        padding: 10px 14px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.95rem;
+      ">
+        ← Kembali
+      </a>
+    </div>
+  </div>
+  </div>
+
+  <!-- Chat Area -->
+  <div class="chat-wrapper">
+    <div class="chat-header">Grup: Try Out</div>
+
+    <div class="chat-container">
+      <div class="message from-other">
+        <div class="sender-name">Davin</div>
+        Soal no 7 TPS logika sulit bgt, ada yang ngerti?
+        <div class="timestamp">19:42</div>
+      </div>
+
+      <div class="message from-me">
+        <div class="sender-name">Saya</div>
+        Coba pakai pola sebab-akibat, biasanya itu kuncinya
+        <div class="timestamp">19:43</div>
+      </div>
+
+      <div class="message from-other">
+        <div class="sender-name">Faiz</div>
+        Pakai pola sebab-akibat vin
+        <div class="timestamp">19:43</div>
+      </div>
+    </div>
+
+    <!-- Input Pesan -->
+    <form class="chat-input" onsubmit="return false;">
+      <!-- Checkbox untuk toggle dropdown -->
+      <input type="checkbox" id="media-toggle" hidden>
+      <label for="media-toggle" class="icon-btn" title="Tambah file/media">
+        <i class="fa fa-paperclip"></i>
+      </label>
+
+      <!-- Dropdown media -->
+      <div class="media-options">
+        <button><i class="fa fa-image"></i> Gambar</button>
+        <button><i class="fa fa-file-alt"></i> Dokumen</button>
+        <button><i class="fa fa-microphone"></i> Audio</button>
+      </div>
+
+      <input type="text" placeholder="Ketik pesan di sini..." />
+      <button type="submit" class="icon-btn" title="Kirim"><i class="fa fa-paper-plane"></i></button>
+    </form>
+  </div>
+
+</body>
+</html>

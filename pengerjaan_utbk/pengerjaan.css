@@ -1,0 +1,183 @@
+/* RESET & GLOBAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f7fa;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* CONTAINER LAYOUT */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+.main-content {
+  flex: 1;
+  padding: 40px;
+}
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.sub-title {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+}
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.nomor-soal {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.nomor-soal a {
+  display: block;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nomor-soal a:hover {
+  background-color: #3498db;
+  color: white;
+}
+.timer {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #1abc9c;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* SOAL */
+.soal {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #2980b9;
+  border-radius: 8px;
+}
+.soal p {
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  margin: 6px 0;
+  cursor: pointer;
+}
+input[type="radio"] {
+  margin-right: 6px;
+}
+
+/* BUTTON */
+button,
+.btn {
+  display: inline-block;
+  background-color: #27ae60;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+button:hover,
+.btn:hover {
+  background-color: #1e8449;
+}
+
+/* HASIL SKOR */
+.score-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.score-box h2 {
+  font-size: 48px;
+  color: #27ae60;
+  margin: 20px 0;
+}
+
+/* PEMBAHASAN */
+.pembahasan-box {
+  background: #ffffff;
+  border-left: 6px solid #9b59b6;
+  padding: 25px 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease-in-out;
+}
+.pembahasan-box:hover {
+  transform: translateY(-3px);
+}
+.pembahasan-box h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+.pembahasan-box p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.pembahasan-box strong {
+  color: #8e44ad;
+}
+
+/* LINK */
+a {
+  color: #2980b9;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .nomor-soal {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+  }
+  .main-content {
+    padding: 20px;
+  }
+  .pembahasan-box {
+    padding: 20px;
+  }
+}
+

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Soal - Bab 7</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px 20px;
+      position: relative;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+    .question {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s ease;
+    }
+    .question h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      background: #f1f3f5;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .options input[type="radio"] {
+      margin-right: 10px;
+    }
+    .options label:hover {
+      background: #dfe7fd;
+    }
+    .submit-btn {
+      display: block;
+      margin: 40px auto 0;
+      padding: 15px 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .submit-btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px);
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #6c757d;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .back-btn:hover {
+      background-color: #5a6268;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../../latihan_soal/latihan_soal.html" class="back-btn">&larr; Kembali</a>
+    <h1>Latihan Soal Bab <7/h1>
+    <form id="quizForm">
+
+<!-- Soal Bahasa Indonesia Kelas 12 Kurikulum Merdeka -->
+<script>
+const soal = [
+  {
+    q: "1. Struktur utama dalam teks berita adalah ....",
+    o: [
+      "Orientasi, komplikasi, dan resolusi",
+      "Abstrak, orientasi, krisis",
+      "Orientasi, evaluasi, dan koda",
+      "Orientasi, peristiwa, dan sumber"
+    ]
+  },
+  {
+    q: "2. Fungsi kutipan langsung dalam karya ilmiah adalah ....",
+    o: [
+      "Menambah jumlah kata dalam karya",
+      "Memperkuat pendapat penulis",
+      "Menarik perhatian pembaca",
+      "Menunjukkan keaslian penulis"
+    ]
+  },
+  {
+    q: "3. Teks eksposisi bertujuan untuk ....",
+    o: [
+      "Menyampaikan perasaan",
+      "Menghibur pembaca",
+      "Memberikan informasi dan pendapat",
+      "Mendeskripsikan objek"
+    ]
+  },
+  {
+    q: "4. Ciri kebahasaan teks eksplanasi adalah ....",
+    o: [
+      "Bahasa kiasan dan imajinatif",
+      "Bahasa formal dan logis",
+      "Bahasa puitis dan indah",
+      "Bahasa gaul dan populer"
+    ]
+  },
+  {
+    q: "5. Perhatikan kalimat berikut: \"Pendidikan karakter penting untuk membentuk generasi bangsa yang berintegritas.\" Kalimat tersebut termasuk dalam teks ....",
+    o: [
+      "Eksposisi",
+      "Eksplanasi",
+      "Deskripsi",
+      "Argumentasi"
+    ]
+  },
+  {
+    q: "6. Teks negosiasi terjadi ketika ....",
+    o: [
+      "Orang berbicara dalam hati",
+      "Orang sedang membuat cerpen",
+      "Dua pihak mencapai kesepakatan",
+      "Guru memberikan penilaian"
+    ]
+  },
+  {
+    q: "7. Judul yang tepat untuk teks eksplanasi tentang banjir adalah ....",
+    o: [
+      "Serunya Main Air",
+      "Mengapa Banjir Terjadi?",
+      "Aku dan Banjir",
+      "Hujan Deras Semalaman"
+    ]
+  },
+  {
+    q: "8. Perbedaan utama antara teks cerpen dan novel adalah ....",
+    o: [
+      "Cerpen lebih banyak tokoh",
+      "Novel lebih panjang dan kompleks",
+      "Cerpen memiliki bab",
+      "Novel tanpa alur"
+    ]
+  },
+  {
+    q: "9. Teks prosedur menyajikan informasi dalam bentuk ....",
+    o: [
+      "Langkah-langkah",
+      "Narasi",
+      "Deskripsi",
+      "Percakapan"
+    ]
+  },
+  {
+    q: "10. Kaidah kebahasaan yang digunakan dalam teks diskusi adalah ....",
+    o: [
+      "Kalimat perintah",
+      "Kalimat tanya",
+      "Kalimat kompleks",
+      "Kalimat interjeksi"
+    ]
+  },
+  {
+    q: "11. Tujuan teks ulasan adalah ....",
+    o: [
+      "Memberikan informasi dan penilaian",
+      "Menawarkan produk",
+      "Menjelaskan langkah kerja",
+      "Menyampaikan perasaan"
+    ]
+  },
+  {
+    q: "12. Teks ceramah biasanya disampaikan secara ....",
+    o: [
+      "Lisan",
+      "Tertulis",
+      "Simbolik",
+      "Kode"
+    ]
+  },
+  {
+    q: "13. Teks yang memuat latar, tokoh, dan alur disebut ....",
+    o: [
+      "Teks prosedur",
+      "Teks eksposisi",
+      "Teks narasi",
+      "Teks ulasan"
+    ]
+  },
+  {
+    q: "14. Sinonim kata \"analisis\" adalah ....",
+    o: [
+      "Kritik",
+      "Penguraian",
+      "Kesimpulan",
+      "Penyatuan"
+    ]
+  },
+  {
+    q: "15. Perbedaan utama teks eksposisi dan argumentasi adalah ....",
+    o: [
+      "Eksposisi memberi fakta, argumentasi meyakinkan",
+      "Eksposisi bersifat naratif",
+      "Argumentasi tidak pakai data",
+      "Argumentasi hanya untuk hiburan"
+    ]
+  },
+  {
+    q: "16. Ciri teks persuasi adalah ....",
+    o: [
+      "Mengajak pembaca melakukan sesuatu",
+      "Memberikan penilaian",
+      "Menceritakan pengalaman",
+      "Menggambarkan benda"
+    ]
+  },
+  {
+    q: "17. Kalimat efektif harus ....",
+    o: [
+      "Singkat, padat, dan jelas",
+      "Berisi banyak gaya bahasa",
+      "Panjang dan rinci",
+      "Memiliki banyak makna"
+    ]
+  },
+  {
+    q: "18. Teks drama biasanya ditulis dalam bentuk ....",
+    o: [
+      "Narasi panjang",
+      "Percakapan antar tokoh",
+      "Puisi bebas",
+      "Cerita pendek"
+    ]
+  },
+  {
+    q: "19. Ciri utama teks anekdot adalah ....",
+    o: [
+      "Lucu dan mengandung kritik",
+      "Serius dan panjang",
+      "Berima dan ritmis",
+      "Bersajak dan berbait"
+    ]
+  },
+  {
+    q: "20. Penulisan daftar pustaka yang benar adalah ....",
+    o: [
+      "Nama pengarang, tahun, judul, kota: penerbit",
+      "Tahun, judul, kota, nama penerbit",
+      "Judul, pengarang, kota, tahun",
+      "Kota, tahun, pengarang, judul"
+    ]
+  }
+];
+
+const form = document.getElementById("quizForm");
+let output = "";
+soal.forEach((s, i) => {
+  output += `<div class="question">
+    <h3>${s.q}</h3>
+    <div class="options">
+      ${s.o.map((opt, j) => `<label><input type="radio" name="q${i + 1}" value="${String.fromCharCode(97 + j)}"> ${opt}</label>`).join('')}
+    </div>
+  </div>`;
+});
+form.insertAdjacentHTML("afterbegin", output);
+</script>
+
+      <button type="submit" class="submit-btn">Kirim Jawaban</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = '../hasil/hasil_jawaban.html';
+    });
+  </script>
+</body>
+</html>

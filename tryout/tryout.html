@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riwayat Try Out UTBK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tryout.css" />
+</head>
+<header>
+  <div class="header-container">
+    <a href="../landing_page/landing_page.html" style="text-decoration: none;">
+      <div class="logo">FIVY</div>
+    </a>
+    <nav class="menu">
+      <ul>
+        <li><a href="../landing_page/landing_page.html">Home</a></li>
+        <li><a href="../buku/buku.html">Daftar Bacaan</a></li>
+        <li><a href="../latihan_soal/latihan_soal.html">Latihan Soal</a></li>
+        <li><a href="../tryout/tryout.html">Try Out</a></li>
+      </ul>
+    </nav>
+    <div class="profile-dropdown" id="profileDropdown">
+      <div class="profile-capsule" onclick="toggleDropdown()">
+        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=150&h=150&q=80"
+          alt="Profile" class="profile-pic" />
+        <span class="profile-name">Halo, Davin</span>
+        <span class="dropdown-icon">▼</span>
+      </div>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="../profile/profile.html" style="display: flex; align-items: center; gap: 8px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 20.25a8.25 8.25 0 0115 0" />
+          </svg>
+          Profile
+        </a>
+        <a class="dropdown-item" href="../forum_diskusi/forum_diskusi.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" d="M5 6h14M5 12h10M5 18h7" />
+          </svg>
+          Forum Diskusi
+        </a>
+        <a class="dropdown-item" href="../login/login.html">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" d="M15 3h4a2 2 0 0 1 2 2v4m-6 12h4a2 2 0 0 0 2-2v-4m-6 0L3 3m0 18L21 3" />
+          </svg>
+          Keluar
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="container">
+    <h2>📘 Riwayat Try Out UTBK</h2>
+
+    <!-- PK -->
+    <div class="card">
+      <div class="info">
+        <h3>Penalaran Kuantitatif (PK)</h3>
+        <p class="date">Selesai: 10 Juli 2025</p>
+        <div class="badge">Kategori: PK</div>
+        <div class="progress-container">
+          <div class="progress">
+            <div class="progress-bar green" style="width: 100%">100%</div>
+          </div>
+          <span class="status passed">Lulus</span>
+        </div>
+      </div>
+      <div class="meta">
+        <span class="grade utbk">UTBK: 725</span>
+        <button class="btn success" onclick="window.location.href='../pengerjaan_utbk/pembahasan.html'">Lihat Pembahasan</button>
+      </div>
+    </div>
+
+    <!-- PM -->
+    <div class="card">
+      <div class="info">
+        <h3>Penalaran Matematika (PM)</h3>
+        <p class="date">Selesai: 5 Juli 2025</p>
+        <div class="badge blue">Kategori: PM</div>
+        <div class="progress-container">
+          <div class="progress">
+            <div class="progress-bar green" style="width: 100%">100%</div>
+          </div>
+          <span class="status passed">Lulus</span>
+        </div>
+      </div>
+      <div class="meta">
+        <span class="grade utbk">UTBK: 702</span>
+        <button class="btn success" onclick="window.location.href='../pengerjaan_utbk/pembahasan.html'">Lihat Pembahasan</button>
+      </div>
+    </div>
+
+    <!-- TPS Campuran -->
+    <div class="card">
+      <div class="info">
+        <h3>Penalaran Kuantitatif - Sesi 2</h3>
+        <p class="date">Selesai: 1 Juli 2025</p>
+        <div class="badge gray">Kategori: PK</div>
+        <div class="progress-container">
+          <div class="progress">
+            <div class="progress-bar green" style="width: 100%">100%</div>
+          </div>
+          <span class="status passed">Lulus</span>
+        </div>
+      </div>
+      <div class="meta">
+        <span class="grade utbk">UTBK: 715</span>
+        <button class="btn success" onclick="window.location.href='../pengerjaan_utbk/pembahasan.html'">Lihat Pembahasan</button>
+      </div>
+    </div>
+
+    <!-- Belum Lulus -->
+    <div class="card">
+      <div class="info">
+        <h3>TPS Campuran (PK, PM, PU)</h3>
+        <p class="date">Selesai: 28 Juni 2025</p>
+        <div class="badge red">Kategori: Gabungan</div>
+        <div class="progress-container">
+          <div class="progress">
+            <div class="progress-bar red" style="width: 40%">40%</div>
+          </div>
+          <span class="status">Belum Lulus</span>
+        </div>
+      </div>
+      <div class="meta">
+        <span class="grade">UTBK: 480</span>
+        <button class="btn primary" onclick="window.location.href='../pengerjaan_utbk/tryout-static.html'">Coba Lagi</button>
+      </div>
+    </div>
+
+    <div class="see-all">
+      <a href="#">Lihat Semua Hasil Try Out →</a>
+    </div>
+  </div>
+  <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("profileDropdown");
+            dropdown.classList.toggle("open");
+        }
+
+        window.addEventListener('click', function (e) {
+            const dropdown = document.getElementById("profileDropdown");
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove("open");
+            }
+        });
+
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

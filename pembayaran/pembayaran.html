@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pembayaran - FIVY</title>
+    <link rel="stylesheet" href="pembayaran.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="payment-container">
+        <div class="payment-card">
+            <h2>Konfirmasi Pembayaran</h2>
+            <p class="subtext">Silakan periksa kembali data dan pilih metode pembayaran Anda</p>
+
+            <div class="summary-box">
+                <div class="summary-item">
+                    <span>Paket:</span>
+                    <strong>Paket Bulanan</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Harga:</span>
+                    <strong>Rp120.000</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Nama:</span>
+                    <strong>Davin Amanta</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Email:</span>
+                    <strong>davin@email.com</strong>
+                </div>
+            </div>
+
+            <h3>Pilih Metode Pembayaran</h3>
+            <div class="payment-methods">
+                <label class="method">
+                    <input type="radio" name="metode" checked>
+                    <img src="../ovo.svg" alt="OVO"
+                        width="55" />
+                    <span>OVO</span>
+                </label>
+                <label class="method">
+                    <input type="radio" name="metode">
+                    <img src="../dana.svg" alt="DANA"
+                        width="55" />
+                    <span>DANA</span>
+                </label>
+                <label class="method">
+                    <input type="radio" name="metode">
+                    <img src="https://img.icons8.com/color/48/000000/bank-card-back-side.png" alt="Bank" />
+                    <span>Transfer Bank</span>
+                </label>
+            </div>
+
+            <button class="cta-button" onclick="window.location.href='../login/login.html'">Bayar Sekarang</button>
+            <a href="../forum_paket/forum_paket.html" class="back-button">Kembali</a>
+        </div>
+    </div>
+</body>
+
+</html>

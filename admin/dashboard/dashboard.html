@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Admin Bimbel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: rgba(44, 62, 80, 1);
+      --accent-color: #1abc9c;
+      --bg-color: #f5f7fa;
+      --card-bg: #ffffff;
+      --text-color: #2c3e50;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: var(--primary-color);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 20px;
+      position: fixed;
+      height: 100vh;
+      transition: 0.3s;
+    }
+
+    .sidebar h2 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 18px;
+      margin: 8px 0;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.2s;
+      font-weight: 500;
+      display: block;
+    }
+
+    .sidebar a:hover {
+      background-color: #34495e;
+      transform: translateX(5px);
+    }
+
+    .sidebar a.active {
+      background-color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    /* MAIN */
+    .main {
+      margin-left: 240px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background-color: #fafafa;
+      color: rgb(0, 0, 0);
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .navbar-left {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .profile {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 60px;
+      right: 30px;
+      background-color: #fff;
+      color: var(--text-color);
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      min-width: 160px;
+      display: none;
+      flex-direction: column;
+      z-index: 100;
+    }
+
+    .dropdown-menu a {
+      padding: 12px 16px;
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .dropdown-menu a.logout {
+      color: #e74c3c;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: var(--text-color);
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .badge {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: var(--accent-color);
+      color: white;
+      font-size: 13px;
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+      }
+
+      .sidebar h2 {
+        display: none;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dropdown-menu {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Admin Bimbel</h2>
+    <a href="../dashboard/dashboard.html" class="active">📊 Dashboard</a>
+    <a href="../student/student.html">👩‍🎓 Data Siswa</a>
+    <a href="../teacher/teacher.html">👨‍🏫 Data Guru</a>
+    <a href="../class/class.html">🏫 Data Kelas</a>
+    <a href="../book/book.html">📚 Buku</a>
+  </div>
+
+  <div class="main">
+    <div class="navbar">
+      <div class="navbar-left">Selamat Datang, Admin</div>
+      <div class="profile" onclick="toggleDropdown()">
+        <img src="https://i.pravatar.cc/150?img=12" alt="Profil Admin">
+      </div>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <!-- <a href="#">👤 Profil Saya</a>
+        <a href="#">⚙️ Pengaturan</a> -->
+        <a href="../../login_admin/loginadmin.html" class="logout">🚪 Logout</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="card-grid">
+        <div class="card">
+          <span class="badge">150</span>
+          <h3>👩‍🎓 Total Siswa</h3>
+          <p>150 siswa aktif terdaftar dalam sistem.</p>
+        </div>
+        <div class="card">
+          <span class="badge">20</span>
+          <h3>👨‍🏫 Total Guru</h3>
+          <p>20 guru aktif mengajar berbagai mata pelajaran.</p>
+        </div>
+        <div class="card">
+          <span class="badge">3</span>
+          <h3>📝 Try Out UTBK</h3>
+          <p>3 Try Out aktif sedang berlangsung saat ini.</p>
+        </div>
+        <div class="card">
+          <span class="badge">45</span>
+          <h3>📈 Statistik Harian</h3>
+          <p>45 siswa login hari ini dan mengerjakan soal.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleDropdown() {
+      const menu = document.getElementById('dropdownMenu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    // Klik di luar dropdown
+    window.onclick = function(e) {
+      const profile = document.querySelector('.profile');
+      const dropdown = document.getElementById('dropdownMenu');
+      if (!profile.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
