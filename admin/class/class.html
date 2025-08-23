@@ -1,331 +1,220 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Kelas - Admin Bimbel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Kelas</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/style.css" />
   <style>
-    :root {
-      --primary-color: rgba(44, 62, 80, 1);
-      --accent-color: #1abc9c;
-      --bg-color: #f5f7fa;
-      --card-bg: #ffffff;
-      --text-color: #2c3e50;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: var(--bg-color);
-      display: flex;
-      min-height: 100vh;
+      background-color: #f8f9fa;
     }
-
-    .sidebar {
-      width: 240px;
-      background-color: var(--primary-color);
+    .table thead th {
+      background-color: #2c3e50;
       color: white;
-      display: flex;
-      flex-direction: column;
-      padding: 30px 20px;
-      position: fixed;
-      height: 100vh;
     }
-
-    .sidebar h2 {
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .sidebar a {
+    .modal-header {
+      background-color: #2c3e50;
       color: white;
-      text-decoration: none;
-      padding: 12px 18px;
-      margin: 8px 0;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-weight: 500;
     }
-
-    .sidebar a:hover {
-      background-color: #34495e;
-    }
-
-    .sidebar a.active {
-      background-color: var(--accent-color);
-      font-weight: 600;
-    }
-
-    .main {
-      margin-left: 240px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .navbar {
-      background-color: #fafafa;
-      padding: 16px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .profile {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .profile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .content {
-      padding: 30px;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: var(--text-color);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: var(--card-bg);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    }
-
-    th,
-    td {
-      padding: 14px 18px;
-      text-align: left;
-    }
-
-    thead {
-      background-color: #ecf0f1;
-    }
-
-    tbody tr:nth-child(even) {
-      background-color: #f9fbfc;
-    }
-
-    tbody tr:hover {
-      background-color: #f0f3f5;
-    }
-
-    th {
-      font-weight: 600;
-      color: var(--text-color);
-    }
-
-    .btn-add {
-      background-color: var(--accent-color);
-      border: none;
+    .btn-custom {
+      background-color: #2c3e50;
       color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      margin-bottom: 15px;
     }
-
-    .btn-soal {
-      background-color: #3498db;
-      color: white;
-      border: none;
-      padding: 6px 10px;
-      font-size: 13px;
-      border-radius: 5px;
-      margin-right: 6px;
+    .btn-custom:hover {
+      background-color: #1a252f;
     }
-
-    .btn-kelas {
-      background-color: #8e44ad;
-      color: white;
-      border: none;
-      padding: 6px 10px;
-      font-size: 13px;
-      border-radius: 5px;
-    }
-
-    @media (max-width: 768px) {
-      .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 10px;
-      }
-
-      .main {
-        margin-left: 0;
-      }
-
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      table {
-        font-size: 14px;
-      }
+    .table td, .table th {
+      vertical-align: middle;
     }
   </style>
 </head>
-
 <body>
-  <div class="sidebar">
-    <h2>Admin Bimbel</h2>
-    <a href="../dashboard/dashboard.html">📊 Dashboard</a>
-    <a href="../student/student.html">👩‍🎓 Data Siswa</a>
-    <a href="../teacher/teacher.html">👨‍🏫 Data Guru</a>
-    <a href="../class/class.html" class="active">🏫 Data Kelas</a>
-    <a href="../book/book.html">📚 Buku</a>
-  </div>
 
-  <div class="main">
-    <div class="navbar">
-      <div class="navbar-left">Data Kelas</div>
-      <div class="profile">
-        <img src="https://i.pravatar.cc/150?img=12" alt="Profil Admin">
-      </div>
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>Admin Bimbel</h2>
+  <a href="../dashboard/dashboard.html">📊 Dashboard</a>
+  <a href="../student/student.html">👩‍🎓 Data Siswa</a>
+  <a href="../teacher/teacher.html">👨‍🏫 Data Guru</a>
+  <a href="../class/class.html" class="active">🏫 Data Kelas</a>
+  <a href="../tryout/tryout.html">📝 Try Out</a>
+  <a href="../book/book.html">📚 Buku</a>
+  <a href="../latihan/latihan.html">🧠 Latihan Soal</a>
+</div>
+
+<!-- Main -->
+<div class="main">
+  <div class="navbar">
+    <div class="navbar-left">🏫 Data Kelas</div>
+    <div class="profile" onclick="toggleDropdown()">
+      <img src="https://i.pravatar.cc/150?img=14" alt="Profil Admin">
     </div>
-
-    <div class="content">
-      <h1>Daftar Kelas Aktif</h1>
-      <button class="btn-add" data-bs-toggle="modal" data-bs-target="#modalTambahKelas">+ Tambah Kelas</button>
-
-      <table>
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Nama Kelas</th>
-            <th>Tingkat</th>
-            <th>Wali Kelas</th>
-            <th>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Kelas 10 IPA</td>
-            <td>10</td>
-            <td>Ahmad Fadli</td>
-            <td>
-              <button class="btn-soal" onclick="window.location.href='soal/soal.html'">+ Soal</button>
-              <button class="btn-kelas" data-bs-toggle="modal" data-bs-target="#modalEditKelas">Edit</button>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Kelas 11 IPS</td>
-            <td>11</td>
-            <td>Sri Wahyuni</td>
-            <td>
-              <button class="btn-soal">+ Soal</button>
-              <button class="btn-kelas" data-bs-toggle="modal" data-bs-target="#modalEditKelas">Edit</button>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Kelas 12 SBMPTN</td>
-            <td>12</td>
-            <td>Budi Hartono</td>
-            <td>
-              <button class="btn-soal">+ Soal</button>
-              <button class="btn-kelas" data-bs-toggle="modal" data-bs-target="#modalEditKelas">Edit</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="../../login_admin/loginadmin.html" class="logout">🚪 Logout</a>
     </div>
   </div>
 
-  <!-- Modal Tambah Kelas -->
-  <div class="modal fade" id="modalTambahKelas" tabindex="-1" aria-labelledby="modalTambahKelasLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <form class="modal-content">
+  <div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4>🏫 Daftar Kelas</h4>
+      <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#modalTambah">
+        <i class="fas fa-plus me-1"></i> Tambah Kelas
+      </button>
+    </div>
+
+    <table class="table table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nama Kelas</th>
+          <th>Wali Kelas</th>
+          <th class="text-center">Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="tableKelas"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal Tambah Kelas -->
+<div class="modal fade" id="modalTambah" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="formTambah">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalTambahKelasLabel">Tambah Kelas Baru</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+          <h5 class="modal-title">Tambah Kelas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
           <div class="mb-3">
-            <label for="namaKelas" class="form-label">Nama Kelas</label>
-            <input type="text" class="form-control" id="namaKelas">
+            <label class="form-label">Nama Kelas</label>
+            <input type="text" class="form-control" id="namaKelas" required>
           </div>
           <div class="mb-3">
-            <label for="tingkatKelas" class="form-label">Tingkat</label>
-            <select class="form-select" id="tingkatKelas">
-              <option value="">Pilih Tingkat</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="waliKelas" class="form-label">Wali Kelas</label>
-            <input type="text" class="form-control" id="waliKelas">
+            <label class="form-label">Wali Kelas</label>
+            <input type="text" class="form-control" id="waliKelas" required>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Simpan</button>
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-custom">Simpan</button>
         </div>
       </form>
     </div>
   </div>
-  <!-- Modal Edit Kelas -->
-  <div class="modal fade" id="modalEditKelas" tabindex="-1" aria-labelledby="modalEditKelasLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <form class="modal-content">
-        <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="modalEditKelasLabel">Edit Kelas</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="editNamaKelas" class="form-label">Nama Kelas</label>
-            <input type="text" class="form-control" id="editNamaKelas" value="Kelas 10 IPA">
-          </div>
-          <div class="mb-3">
-            <label for="editTingkatKelas" class="form-label">Tingkat</label>
-            <select class="form-select" id="editTingkatKelas">
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="editWaliKelas" class="form-label">Wali Kelas</label>
-            <input type="text" class="form-control" id="editWaliKelas" value="Ahmad Fadli">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-          <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-        </div>
-      </form>
-    </div>
-  </div>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Modal Edit Kelas -->
+<div class="modal fade" id="modalEdit" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="formEdit">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Kelas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="editIndex">
+          <div class="mb-3">
+            <label class="form-label">Nama Kelas</label>
+            <input type="text" class="form-control" id="editNamaKelas" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Wali Kelas</label>
+            <input type="text" class="form-control" id="editWaliKelas" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-custom">Perbarui</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  let kelasList = [
+    { nama: "10 IPA 1", wali: "Bu Rina" },
+    { nama: "11 IPS 2", wali: "Pak Dedi" },
+    { nama: "12 IPA 3", wali: "Bu Lia" }
+  ];
+
+  function renderTable() {
+    const table = document.getElementById("tableKelas");
+    table.innerHTML = "";
+    kelasList.forEach((kelas, index) => {
+      table.innerHTML += `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${kelas.nama}</td>
+          <td>${kelas.wali}</td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-warning me-2" onclick="editKelas(${index})"><i class="fas fa-edit"></i></button>
+            <button class="btn btn-sm btn-danger" onclick="hapusKelas(${index})"><i class="fas fa-trash-alt"></i></button>
+          </td>
+        </tr>
+      `;
+    });
+  }
+
+  document.getElementById("formTambah").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const nama = document.getElementById("namaKelas").value;
+    const wali = document.getElementById("waliKelas").value;
+    kelasList.push({ nama, wali });
+    renderTable();
+    this.reset();
+    bootstrap.Modal.getInstance(document.getElementById("modalTambah")).hide();
+  });
+
+  function editKelas(index) {
+    const kelas = kelasList[index];
+    document.getElementById("editIndex").value = index;
+    document.getElementById("editNamaKelas").value = kelas.nama;
+    document.getElementById("editWaliKelas").value = kelas.wali;
+    new bootstrap.Modal(document.getElementById("modalEdit")).show();
+  }
+
+  document.getElementById("formEdit").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const index = document.getElementById("editIndex").value;
+    kelasList[index] = {
+      nama: document.getElementById("editNamaKelas").value,
+      wali: document.getElementById("editWaliKelas").value
+    };
+    renderTable();
+    bootstrap.Modal.getInstance(document.getElementById("modalEdit")).hide();
+  });
+
+  function hapusKelas(index) {
+    if (confirm("Yakin ingin menghapus kelas ini?")) {
+      kelasList.splice(index, 1);
+      renderTable();
+    }
+  }
+
+  function toggleDropdown() {
+    const menu = document.getElementById('dropdownMenu');
+    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+  }
+
+  window.onclick = function(e) {
+    const profile = document.querySelector('.profile');
+    const dropdown = document.getElementById('dropdownMenu');
+    if (!profile.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.style.display = 'none';
+    }
+  }
+
+  renderTable();
+</script>
+
 </body>
-
 </html>

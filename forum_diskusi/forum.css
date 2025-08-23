@@ -22,17 +22,14 @@ body {
 }
 
 .group {
+    display: block;
     padding: 10px 14px;
     border-radius: 8px;
     margin-bottom: 8px;
     background-color: #41529e;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.group a {
-    text-decoration: none;
     color: #fafafa;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .group:hover {
@@ -43,6 +40,14 @@ body {
     background-color: #7f95ff;
     font-weight: bold;
 }
+
+
+.group a {
+    text-decoration: none;
+    color: #fafafa;
+}
+
+
 
 .chat-wrapper {
     flex: 1;

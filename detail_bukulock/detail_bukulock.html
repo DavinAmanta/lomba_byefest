@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Materi Bimbel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="detail_bukulock.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <a href="../landing_page/landing_page.html" class="logo">FIVY</a>
+      <nav class="menu">
+        <ul>
+            <li><a href="../landing_page/landing_page.html">Home</a></li>
+          <li><a href="../bukulocklogin/bukulocklogin.html">Daftar Bacaan</a></li>
+          <li><div id="locknav">Latihan Soal</div></li>
+          <li><div id="locknav">Try Out</div></li>
+        </ul>
+      </nav>
+      <div class="profile-dropdown" id="profileDropdown">
+        <div class="profile-capsule" onclick="toggleDropdown()">
+          <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=150&h=150&q=80"
+            alt="Profile" class="profile-pic" />
+          <span class="profile-name">Halo, Davin</span>
+          <span class="dropdown-icon">▼</span>
+        </div>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="../profile/profile.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 7.5a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 20.25a8.25 8.25 0 0115 0" />
+            </svg>
+            Profile
+          </a>
+          <a class="dropdown-item" href="../login/login.html">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" d="M15 3h4a2 2 0 0 1 2 2v4m-6 12h4a2 2 0 0 0 2-2v-4m-6 0L3 3m0 18L21 3" />
+            </svg>
+            Keluar
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="features">
+    <div class="container">
+      <a href="../bukulocklogin/bukulocklogin.html" class="btn-back">← Kembali</a>
+      <div class="materi modern">
+        <div class="materi-image-modern">
+          <img
+            src="https://static.buku.kemdikbud.go.id/content/image/coverteks/coverkurikulum21/Bahasa_Indonesia_BS_KLS_X_Rev_Cover.png"
+            alt="Bahasa Indonesia Kelas X">
+        </div>
+        <div class="materi-info-modern">
+          <h1>Bahasa Indonesia Kelas X</h1>
+        </div>
+        <div class="materi-detail-modern">
+          <h2>Deskripsi Materi</h2>
+
+          <div class="bab">
+            <h3>BAB 1 – Mengenalkan dan Mempromosikan Produk Pangan Lokal Indonesia</h3>
+            <p><strong>1. Pengertian Pangan Lokal</strong><br>
+              Pangan lokal adalah makanan dan bahan pangan yang berasal dari hasil pertanian, perkebunan, peternakan,
+              perikanan, dan hutan di daerah tertentu yang dikonsumsi oleh masyarakat setempat. Contoh: singkong, sagu,
+              jagung, ubi, tempe, ikan air tawar, rempah-rempah lokal, dan lain-lain.</p>
+
+            <p><strong>2. Keunggulan Produk Pangan Lokal</strong><br>
+              - Kaya Gizi dan Beragam<br>
+              - Ramah Lingkungan<br>
+              - Mendukung Ekonomi Daerah<br>
+              - Lebih Segar dan Sehat</p>
+
+            <p><strong>3. Contoh Produk Pangan Lokal Unggulan</strong><br>
+              <em>Contoh tabel: Daerah vs Produk</em></p>
+
+            <p><strong>4. Strategi Mengenalkan Pangan Lokal</strong><br>
+              - Edukasi di Sekolah<br>
+              - Festival Kuliner<br>
+              - Promosi Digital<br>
+              - Kemasan Menarik</p>
+
+            <p><strong>5. Strategi Promosi</strong><br>
+              - Kolaborasi Influencer<br>
+              - Pameran UMKM<br>
+              - Labelisasi Produk<br>
+              - E-commerce<br>
+              - Hak Merek</p>
+
+            <p><strong>6. Tantangan dan Solusi</strong><br>
+              - Kurang minat → Edukasi<br>
+              - Distribusi terbatas → Kolaborasi logistik<br>
+              - Kurang promosi → Kampanye komunitas</p>
+
+            <p><strong>7. Peran Generasi Muda</strong><br>
+              - Duta pangan lokal<br>
+              - Membuat konten edukatif<br>
+              - Bangun startup lokal<br>
+              - Aktif di komunitas</p>
+
+            <p><strong>8. Kesimpulan</strong><br>
+              Dukung pangan lokal untuk kedaulatan pangan dan cinta produk Indonesia.</p>
+          </div>
+
+          <div class="bab">
+            <h3>BAB 2 – Menyajikan Berita Inovasi yang Menghibur</h3>
+            <p><strong>1. Pengertian Berita Inovasi</strong><br>
+              Berita tentang ide baru atau teknologi yang dikemas ringan dan menghibur.</p>
+
+            <p><strong>2. Ciri-ciri</strong><br>
+              - Kreatif, ringan, humor, visual menarik, tidak membosankan</p>
+
+            <p><strong>3. Struktur Berita</strong><br>
+              Judul → Lead → Isi (5W+1H) → Penutup</p>
+
+            <p><strong>4. Contoh Inovasi</strong><br>
+              - Helm Anti Kantuk, Game Edukasi, dll</p>
+
+            <p><strong>5. Teknik Penyajian</strong><br>
+              - Bahasa santai, ilustrasi, vlog/podcast, ekspresi ceria</p>
+
+            <p><strong>6. Contoh Singkat</strong><br>
+              Lemari anti-bau sepatu karya siswa SMP</p>
+
+            <p><strong>7. Tips Pelajar</strong><br>
+              - Kreatif, kerja tim, etis, gunakan media sosial</p>
+
+            <p><strong>8. Kesimpulan</strong><br>
+              Berita inovasi bisa menghibur sekaligus menginspirasi.</p>
+          </div>
+
+          <div class="bab">
+            <h3>BAB 3 – Menggali Nilai Sejarah Bangsa Lewat Cerita Pendek</h3>
+            <p><strong>1. Pengertian Cerpen</strong><br>
+              Cerita fiksi singkat yang bisa mengangkat nilai sejarah.</p>
+
+            <p><strong>2. Kelebihan Cerpen Sejarah</strong><br>
+              - Menghidupkan peristiwa sejarah dan menumbuhkan empati</p>
+
+            <p><strong>3. Nilai yang Diangkat</strong><br>
+              - Patriotisme, Nasionalisme, Persatuan, Pengorbanan</p>
+
+            <p><strong>4. Unsur Cerpen</strong><br>
+              - Tokoh, latar, alur, tema, pesan moral</p>
+
+            <p><strong>5. Contoh Judul Cerpen</strong><br>
+              - “Surat dari Kartini”, “Bendera di Tengah Serangan”, dll</p>
+
+            <p><strong>6. Cara Menggali Nilai</strong><br>
+              - Analisis cerita, bandingkan dengan sejarah, diskusi kelompok</p>
+
+            <p><strong>7. Kutipan Cerpen</strong><br>
+              “Kakek adalah pahlawan roti...”</p>
+
+            <p><strong>8. Kesimpulan</strong><br>
+              Cerpen menjadi jendela sejarah yang menyentuh dan bermakna.</p>
+          </div>
+
+          <div class="bab">
+            <h3>BAB 4 – Menulis Puisi yang Menginspirasi Adanya Kesempatan untuk Semua</h3>
+            <p><strong>1. Apa Itu Puisi?</strong><br>
+              Ekspresi imajinatif melalui kata penuh makna.</p>
+
+            <p><strong>2. Tema Kesempatan</strong><br>
+              - Tentang harapan, kesetaraan, dan keadilan sosial</p>
+
+            <p><strong>3. Nilai yang Diangkat</strong><br>
+              - Harapan, empati, motivasi, keadilan</p>
+
+            <p><strong>4. Ciri Puisi Inspiratif</strong><br>
+              - Simpel, menyentuh, citra kuat, pesan moral</p>
+
+            <p><strong>5. Langkah Menulis</strong><br>
+              - Sudut pandang → pesan → diksi → gaya bahasa → rima</p>
+
+            <p><strong>6. Contoh Puisi: “Peluang untuk Semua”</strong><br>
+              <em>(puisi lengkap dapat dimasukkan di sini)</em></p>
+
+            <p><strong>7. Aktivitas di Kelas</strong><br>
+              - Tulis puisi dari sudut tokoh inspiratif dan bacakan</p>
+
+            <p><strong>8. Kesimpulan</strong><br>
+              Puisi bisa menyuarakan semangat hidup dan harapan.</p>
+          </div>
+
+          <div class="bab">
+            <h3>BAB 5 – Mengenal Keberagaman Indonesia Lewat Pertunjukan Drama</h3>
+            <p><strong>1. Apa Itu Drama?</strong><br>
+              Drama adalah karya seni cerita lewat dialog dan aksi panggung.</p>
+
+            <p><strong>2. Kenapa Drama Cocok?</strong><br>
+              - Emosional, visual, empatik, inklusif</p>
+
+            <p><strong>3. Nilai yang Diangkat</strong><br>
+              - Toleransi, Gotong royong, Persatuan</p>
+
+            <p><strong>4. Contoh Tema Drama</strong><br>
+              - “Beda Itu Biasa”, “Kita Semua Indonesia”, dll</p>
+
+            <p><strong>5. Struktur Drama</strong><br>
+              Prolog → Konflik → Klimaks → Penyelesaian → Epilog</p>
+
+            <p><strong>6. Contoh Dialog</strong><br>
+              Rara dan Dira tukar budaya dan belajar bersama</p>
+
+            <p><strong>7. Manfaat Drama</strong><br>
+              - Ekspresi, komunikasi, kerja tim, cinta budaya</p>
+
+            <p><strong>8. Tips Menyiapkan Drama</strong><br>
+              - Libatkan semua, gunakan unsur budaya, sampaikan pesan damai</p>
+
+            <p><strong>9. Kesimpulan</strong><br>
+              Drama adalah media kuat untuk mengenalkan keberagaman dan persatuan.</p>
+          </div>
+
+          <div class="bab">
+            <h3>BAB 6 – Berperan dalam Konservasi Alam Indonesia Lewat Karya Ilmiah</h3>
+            <p><strong>1. Apa Itu Konservasi Alam?</strong><br>
+              Pelestarian lingkungan seperti hutan, laut, dan sumber daya lainnya</p>
+
+            <p><strong>2. Apa Itu Karya Ilmiah?</strong><br>
+              Tulisan sistematis yang menjelaskan atau menyelesaikan masalah</p>
+
+            <p><strong>3. Mengapa Konservasi Cocok Dijadikan Karya Ilmiah?</strong><br>
+              - Berbasis fakta, pengamatan nyata, dan mendorong kepedulian</p>
+
+            <p><strong>4. Contoh Judul Karya Ilmiah</strong><br>
+              - “Pemanfaatan Sampah Organik”, “Konservasi Penyu Digital”, dll</p>
+
+            <p><strong>5. Struktur Karya Ilmiah</strong><br>
+              Judul → Pendahuluan → Metode → Hasil → Kesimpulan</p>
+
+            <p><strong>6. Langkah Menulis</strong><br>
+              - Pilih masalah nyata → Rumuskan tujuan → Observasi → Tulis sistematis</p>
+
+            <p><strong>7. Manfaat</strong><br>
+              - Menumbuhkan kesadaran, melatih berpikir ilmiah dan inovatif</p>
+
+            <p><strong>8. Kesimpulan</strong><br>
+              Karya ilmiah bisa menjadi bentuk nyata kontribusi pelajar menjaga alam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Tentang Kami</h3>
+        <p>FIVY adalah solusi belajar online untuk siswa SMA/SMK dengan materi berkualitas dan tutor berpengalaman.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="../login/login.html">Home</a></li>
+          <li><a href="../bukulock/bukulock.html">Daftar Bacaan</a></li>
+          <li><div id="locknav">Latihan Soal</div></li>
+          <li><div id="locknav">Try Out</div></li>
+        </ul>
+      </div>
+      <div class="footer-col contact-form">
+        <h3>Kontak</h3>
+        <input type="text" placeholder="Nama Anda">
+        <input type="email" placeholder="Email Anda">
+        <textarea rows="3" placeholder="Pesan Anda"></textarea>
+        <button class="cta">Kirim</button>
+      </div>
+      <div class="footer-col">
+        <h3>Ikuti Kami</h3>
+        <div class="social-icons">
+          <a href="#"><img src="https://img.icons8.com/color/48/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram"></a>
+          <a href="#"><img src="https://img.icons8.com/color/48/youtube-play.png" alt="YouTube"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 FIVY. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("profileDropdown");
+      dropdown.classList.toggle("open");
+    }
+
+    window.addEventListener('click', function (e) {
+      const dropdown = document.getElementById("profileDropdown");
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove("open");
+      }
+    });
+  </script>
+</body>
+
+</html>

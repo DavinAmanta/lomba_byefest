@@ -35,9 +35,13 @@
       <nav class="menu">
         <ul>
           <li><a href="../landing_page/landing_page.html">Home</a></li>
-          <li><a href="../buku/buku.html">Daftar Bacaan</a></li>
-          <li><a href="../latihan_soal/latihan_soal.html">Latihan Soal</a></li>
-          <li><a href="../tryout/tryout.html">Try Out</a></li>
+          <li><a href="../bukulocklogin/bukulocklogin.html">Daftar Bacaan</a></li>
+          <li>
+            <div id="locknav">Latihan Soal</div>
+          </li>
+          <li>
+            <div id="locknav">Try Out</div>
+          </li>
         </ul>
       </nav>
       <div class="profile-dropdown" id="profileDropdown">
@@ -57,13 +61,7 @@
             </svg>
             Profile
           </a>
-          <a class="dropdown-item" href="../forum_diskusi/forum_diskusi.html">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" d="M5 6h14M5 12h10M5 18h7" />
-            </svg>
-            Forum Diskusi
-          </a>
-          <a class="dropdown-item" href="../login/login.html">
+          <a class="dropdown-item" href="../index/index.html">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <path stroke="currentColor" d="M15 3h4a2 2 0 0 1 2 2v4m-6 12h4a2 2 0 0 0 2-2v-4m-6 0L3 3m0 18L21 3" />
             </svg>
@@ -243,38 +241,23 @@
     <div class="pricing-container">
       <!-- Paket Dasar -->
       <div class="price-card">
-        <h3>Paket Dasar</h3>
-        <p class="price">Gratis</p>
-        <ul>
-          <li>Akses materi pelajaran</li>
-          <li>Latihan soal mingguan</li>
-          <li>Forum diskusi</li>
-        </ul>
-        <a href="#" class="cta">Daftar Sekarang</a>
+        <h3>Paket Mingguan</h3>
+        <p class="price">Rp 45.000/Minggu</p>
+        <a href="../forum_paket/forum_paket.html" class="cta">Beli Sekarang</a>
       </div>
 
       <!-- Paket Pro -->
       <div class="price-card highlighted">
-        <h3>Paket Pro</h3>
-        <p class="price">Rp 99.000/bulan</p>
-        <ul>
-          <li>Semua di Paket Dasar</li>
-          <li>Live Class mingguan</li>
-          <li>Evaluasi bulanan</li>
-        </ul>
-        <a href="#" class="cta">Paket Favorit</a>
+        <h3>Paket Bulanan</h3>
+        <p class="price">Rp 99.000/Bulan</p>
+        <a href="../forum_paket/forum_paket.html" class="cta">Paket Favorit</a>
       </div>
 
       <!-- Paket Premium -->
       <div class="price-card">
-        <h3>Paket Premium</h3>
-        <p class="price">Rp 149.000/bulan</p>
-        <ul>
-          <li>Semua di Paket Pro</li>
-          <li>Mentoring 1-on-1</li>
-          <li>Persiapan UTBK & PTN</li>
-        </ul>
-        <a href="#" class="cta">Gabung Sekarang</a>
+        <h3>Paket Tahunan</h3>
+        <p class="price">Rp 149.000/Tahun</p>
+        <a href="../forum_paket/forum_paket.html" class="cta">Beli Sekarang</a>
       </div>
     </div>
   </section>
@@ -324,7 +307,8 @@
 
     </div>
     <div class="more">
-      <button class="cta" onclick="window.location.href='../buku/buku.html'">Baca Selengkapnya</button>
+      <button class="cta" onclick="window.location.href='../bukulocklogin/bukulocklogin.html'">Baca
+        Selengkapnya</button>
     </div>
   </section>
 
@@ -346,15 +330,17 @@
 
       <div class="faq-item">
         <button class="faq-toggle">
-          <span class="faq-question">Apa perbedaan antara Paket Dasar, Pro, dan Premium?</span>
+          <span class="faq-question">Apakah saya bisa belajar kapan saja di platform e-learning ini?</span>
           <svg class="faq-icon" viewBox="0 0 24 24">
-            <path d="M6 9l6 6 6-6" stroke="#3b5a91" stroke-width="2" fill="none" stroke-linecap="round" /></svg>
+            <path d="M6 9l6 6 6-6" stroke="#3b5a91" stroke-width="2" fill="none" stroke-linecap="round" />
+          </svg>
         </button>
         <div class="faq-content">
-          <p>Paket Dasar cocok untuk belajar mandiri, Pro menawarkan fitur latihan soal, dan Premium menyertakan mentor
-            serta kelas live.</p>
+          <p>Ya, platform e-learning ini bersifat fleksibel. Anda dapat mengakses materi dan latihan kapan pun sesuai
+            waktu luang Anda.</p>
         </div>
       </div>
+
 
       <div class="faq-item">
         <button class="faq-toggle">
